@@ -21,7 +21,7 @@ app.use(session({
     secret: process.env.EXPRESS_SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: true }
+    cookie: { secure: false }
 }));
 
 //initialize passport
