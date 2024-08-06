@@ -11,7 +11,7 @@ const app = express();
 
 // middleware
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : [],
     credentials: true
 }));
 app.use(bodyParser.json());
