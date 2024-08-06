@@ -7,9 +7,9 @@ router.get('/google', passport.authenticate('google', { scope: ['openid', 'profi
 
 // callback
 router.get('/google/callback',
-    passport.authenticate('google', { failureRedirect: 'http://localhost:3000/login' }),
+    passport.authenticate('google', { failureRedirect: 'https://book-manager-teal.vercel.app/login' }),
     (req, res) => {
-        res.redirect('http://localhost:3000/');
+        res.redirect('https://book-manager-teal.vercel.app/');
     }
 );
 
