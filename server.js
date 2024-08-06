@@ -21,7 +21,7 @@ app.use(session({
     secret: 'uwhifduwfuiwnfiw',
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false }
+    cookie: { secure: true }
 }));
 
 //initialize passport
