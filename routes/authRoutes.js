@@ -1,15 +1,17 @@
 const express = require('express');
 const passport = require('passport');
 const router = express.Router();
+require('dotenv').config();
 
+const fe_base_url = process.env.FRONTEND_BASE_URL
 // auth handler
 router.get('/google', passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }));
 
 // callback
 router.get('/google/callback',
-    passport.authenticate('google', { failureRedirect: 'https://book-manager-teal.vercel.app/login' }),
+    passport.authenticate('google', { failureRedirect: `${fe_base_url}/login`}),
     (req, res) => {
-        res.redirect('https://book-manager-teal.vercel.app/');
+        res.redirect(fe_base_url);
     }
 );
 
