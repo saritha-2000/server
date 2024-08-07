@@ -15,11 +15,6 @@ router.get('/google/callback',
     }
 );
 
-// Unauthorized route
-router.get('/unauthorized', (req, res) => {
-    res.status(403).send('You are not authorized to access this application.');
-});
-
 // session destroy
 router.get('/logout', (req, res, next) => {
     req.logout((err) => {
